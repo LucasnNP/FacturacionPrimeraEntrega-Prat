@@ -14,14 +14,14 @@ import com.coderhouse.models.Producto;
 @SpringBootApplication
 public class EcommerceProjectApplication implements CommandLineRunner {
 	
-	@Autowired
+	@Autowired //inyectamos el DaoFactory para tener disponibles los métodos.
 	private DaoFactory dao;
 
 	public static void main(String[] args) {
 		SpringApplication.run(EcommerceProjectApplication.class, args);
 	}
 	
-	@Override
+	@Override // Para poder pasar argumentos y manejar excepciones.
 	public void run(String... args) throws Exception {
 		try {
 			Producto prod1 = new Producto("Yerba Mate", "YB001", 50, 1500);

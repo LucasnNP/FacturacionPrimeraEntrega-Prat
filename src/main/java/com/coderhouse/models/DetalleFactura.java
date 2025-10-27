@@ -1,5 +1,9 @@
 package com.coderhouse.models;
 
+/*
+ * Representa el detalle de una factura, relacionando producto y cantidad. Además es el punto de unión entre facturas y productos.
+ */
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,10 +21,16 @@ public class DetalleFactura {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	/*
+	 * Muchos detalles pertenecen a una sola factura. Es decir, una factura puede tener muchos ítems (detalles), pero cada detalle pertence a una sola factura.
+	 */
 	@ManyToOne
 	@JoinColumn(name = "factura_id")
 	private Factura factura;
 	
+	/*
+	 * Muchos detalles pueden referirse al mismo producto. Es decir que el mismo producto puede aparecer en muchas facturas distintas, pero cada detalle hace referencia a un único producto.
+	 */
 	@ManyToOne
 	@JoinColumn(name = "producto_id")
 	private Producto producto;
@@ -31,19 +41,27 @@ public class DetalleFactura {
 	@Column(name = "PrecioUnitario")
 	private double precioUnitario;
 
+	/*
+	 * se declara el constructor de la superclaseclase.
+	 */
 	public DetalleFactura() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-
+	/*
+	 * se genera el constructor usando los campos de interés.
+	 */
 	public DetalleFactura(Producto producto, int cantidad, double precioUnitario) {
 		super();
 		this.producto = producto;
 		this.cantidad = cantidad;
 		this.precioUnitario = precioUnitario;
 	}
-
+	
+	/*
+	 * Se generan los Getters y Setters.
+	 */
 	public double calcularSubtotal() {
         return cantidad * precioUnitario;
     }

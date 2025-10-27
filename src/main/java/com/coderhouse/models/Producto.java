@@ -1,5 +1,9 @@
 package com.coderhouse.models;
 
+/*
+ * Representa un producto disponible para la venta.
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,14 +36,24 @@ public class Producto {
 	@Column(name = "Precio", nullable = false)
 	private double precio;
 	
+	/*
+	 * Un producto puede aparecer en muchos detalles.
+	 * La lista de detalles estará mapeada por el campo producto dentro de la clase DetalleFactura.
+	 */
 	@OneToMany(mappedBy = "producto", fetch = FetchType.EAGER)
 	private List<DetalleFactura> detalles = new ArrayList<>();
 
+	/*
+	 * se genera el constructor de la superclaseclase.
+	 */
 	public Producto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	/*
+	 * se genera el constructor usando los campos de interés.
+	 */
 	public Producto(String descripcion, String codigo, int stock, double precio) {
 		super();
 		this.descripcion = descripcion;
@@ -47,7 +61,10 @@ public class Producto {
 		this.stock = stock;
 		this.precio = precio;
 	}
-
+	
+	/*
+	 * Se generan los Getters y Setters.
+	 */
 	public Long getId() {
 		return id;
 	}
@@ -96,6 +113,9 @@ public class Producto {
 		this.detalles = detalles;
 	}
 
+	/*
+	 * Se genera el toString.
+	 */
 	@Override
 	public String toString() {
 		return "Producto [id=" + id + ", descripcion=" + descripcion + ", codigo=" + codigo + ", stock=" + stock

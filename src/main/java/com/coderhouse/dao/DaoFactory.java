@@ -1,5 +1,9 @@
 package com.coderhouse.dao;
 
+/*
+ * Es el encargado de manejar la información y trasladarla a la db.
+ */
+
 import org.springframework.stereotype.Service;
 
 import com.coderhouse.models.Cliente;
@@ -10,13 +14,13 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 
-@Service
+@Service //Este objeto es el servicio que me permite el manejo de la información
 public class DaoFactory {
 	
 	@PersistenceContext
-	private EntityManager em;
+	private EntityManager em; // entidad encargda de manejar las entidades dandole el contexto de persistencia
 	
-	@Transactional
+	@Transactional // Método par obtener feedback de la base de datos
 	public void persistirCliente(Cliente cliente) {
 		em.persist(cliente);
 	}

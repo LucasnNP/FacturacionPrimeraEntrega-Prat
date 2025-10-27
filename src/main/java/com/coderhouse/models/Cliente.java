@@ -1,5 +1,9 @@
 package com.coderhouse.models;
 
+/**
+ * Representa un cliente del comercio.
+ */
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,16 +38,26 @@ public class Cliente {
 	@Column(name = "Email", nullable = false, unique= true)
 	private String email;
 	
+	/*
+	 * Un cliente puede tener muchas facturas, pero cada factura puede pertenecer a un único cliente.
+	 * La relación estará mapeada por el campo cliente que existe en la clase Factura.
+	 */
 	@OneToMany(mappedBy = "cliente", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Factura> facturas = new ArrayList<>();
 	
 	private LocalDateTime createdAt = LocalDateTime.now();
 
+	/*
+	 * se declara el constructor de la superclaseclase.
+	 */
 	public Cliente() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
+	/*
+	 * se genera el constructor usando los campos de interés.
+	 */
 	public Cliente(String nombre, String apellido, int dni, String email) {
 		super();
 		this.nombre = nombre;
@@ -52,6 +66,9 @@ public class Cliente {
 		this.email = email;
 	}
 
+	/*
+	 * Se generan los Getters y Setters.
+	 */
 	public Long getId() {
 		return id;
 	}
@@ -108,6 +125,9 @@ public class Cliente {
 		this.createdAt = createdAt;
 	}
 
+	/*
+	 * Se genera el toString.
+	 */
 	@Override
 	public String toString() {
 		return "Cliente [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", email="
