@@ -70,6 +70,7 @@ private Producto producto;
 📌Relaciones: 
 - **Muchos detalles ➡️ una factura (ManyToOne)**
 - **Muchos detalles ➡️ un producto (ManyToOne)**
+
 De esta manera, se crea la relación **muchos a muchos** entre Factura y Producto.
 
 ---
