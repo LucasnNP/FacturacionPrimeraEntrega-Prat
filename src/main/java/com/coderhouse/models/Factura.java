@@ -8,6 +8,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,7 +35,7 @@ public class Factura {
 	 * Muchas facturas pueden pertencer al mismo cliente, pero cada factura pertenece a un solo cliente.
 	 */
 	@ManyToOne 
-	@JoinColumn(name = "cliente_id") 
+	@JoinColumn(name = "cliente_id")
 	private Cliente cliente; //Cada factura está asociada a un cliente específico.
 	
 	/*
@@ -41,6 +43,7 @@ public class Factura {
 	 * La lista de detalles estará mapeada por el campo factura dentro de la clase DetalleFactura.
 	 */
 	@OneToMany(mappedBy = "factura", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<DetalleFactura> detalles = new ArrayList<>();
 	
 	private LocalDateTime fecha = LocalDateTime.now();

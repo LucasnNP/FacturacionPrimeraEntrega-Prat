@@ -8,6 +8,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -43,6 +45,7 @@ public class Cliente {
 	 * La relación estará mapeada por el campo cliente que existe en la clase Factura.
 	 */
 	@OneToMany(mappedBy = "cliente", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JsonIgnore
 	private List<Factura> facturas = new ArrayList<>();
 	
 	private LocalDateTime createdAt = LocalDateTime.now();
