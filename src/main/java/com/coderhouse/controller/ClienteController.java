@@ -63,9 +63,9 @@ public class ClienteController {
 	}
 	
 	@PutMapping("/{clienteId}")
-	public ResponseEntity<Cliente> updateCliente(@PathVariable Long clienteId, @RequestBody Cliente clienteACtualizado) {
+	public ResponseEntity<Cliente> updateCliente(@PathVariable Long clienteId, @RequestBody Cliente clienteActualizado) {
 		try {
-			Cliente cliente = clienteService.update(clienteId, clienteACtualizado);
+			Cliente cliente = clienteService.update(clienteId, clienteActualizado);
 			if (cliente != null)
 				return ResponseEntity.ok(cliente); // 200 OK
 			else

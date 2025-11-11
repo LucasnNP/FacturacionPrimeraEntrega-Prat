@@ -9,7 +9,6 @@ import com.coderhouse.interfaces.CRUDInterface;
 import com.coderhouse.models.DetalleFactura;
 import com.coderhouse.repository.DetalleFacturaRepository;
 
-import jakarta.transaction.Transactional;
 
 /**
  * Cada servicio implementa la interface CRUD usando su repositorio correspondiente
@@ -33,40 +32,19 @@ public class DetalleFacturaService implements CRUDInterface<DetalleFactura, Long
 		return detalleFacturaRepository.findById(id).orElseThrow(() -> new IllegalArgumentException(message));
 	}
 	
+	//No se permiten operaciones de escritura directos en los detalles
 	@Override
-	public DetalleFactura save(DetalleFactura nuevoDetalle) {
-		return detalleFacturaRepository.save(nuevoDetalle);
-	}
-	
+	public DetalleFactura save(DetalleFactura entity) {
+			throw new UnsupportedOperationException("Los detalles solo se crean mediante la factura.");
+		}
+		
 	@Override
-	@Transactional
-	public DetalleFactura update(Long id, DetalleFactura detalleActualizado) {
-		DetalleFactura detalle = findById(id);
-		
-		if (detalleActualizado.getCantidad() != 0) {
-			detalle.setCantidad(detalleActualizado.getCantidad());
-		}
-		
-		if (detalleActualizado.getPrecioUnitario() != 0) {
-			detalle.setPrecioUnitario(detalleActualizado.getPrecioUnitario());
-		}
-		
-		if (detalleActualizado.getProducto() != null) {
-			detalle.setProducto(detalleActualizado.getProducto());
-		}
-		
-		if (detalleActualizado.getFactura() != null) {
-			detalle.setFactura(detalleActualizado.getFactura());
-		}
-		
-		return detalleFacturaRepository.save(detalle);
+	public DetalleFactura update(Long id, DetalleFactura entity) {
+		throw new UnsupportedOperationException("Los detalles solo se actualizan mediante la factura.");
 	}
 	
 	@Override
 	public void deleteById(Long id) {
-		if (!detalleFacturaRepository.existsById(id)) {
-			throw new IllegalArgumentException(message);
-		}
-		detalleFacturaRepository.deleteById(id);
+		throw new UnsupportedOperationException("Los detalles solo se eliminan mediante la factura.");
 	}
 }

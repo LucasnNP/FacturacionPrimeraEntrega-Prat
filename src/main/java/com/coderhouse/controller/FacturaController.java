@@ -52,13 +52,15 @@ public class FacturaController {
 	}
 	
 	@PostMapping("/create")
-	public ResponseEntity<Factura> createFactura(@RequestBody Factura factura) {
-		try {
-			Factura nueva = facturaService.save(factura);
-			return ResponseEntity.status(HttpStatus.CREATED).body(nueva); // 201
-		} catch (Exception e) {
-			return ResponseEntity.internalServerError().build(); // Error 500
-		}
+	public ResponseEntity<?> createFactura(@RequestBody Factura factura) {
+	    try {
+	        Factura nueva = facturaService.save(factura);
+	        return ResponseEntity.status(HttpStatus.CREATED).body(nueva); // 201
+	    } catch (Exception e) {
+	        return ResponseEntity
+	                .status(HttpStatus.BAD_REQUEST)
+	                .body("Error al crear factura: " + e.getMessage());
+	    }
 	}
 	
 	@PutMapping("/{facturaId}")

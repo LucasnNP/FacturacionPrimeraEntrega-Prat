@@ -7,6 +7,8 @@ package com.coderhouse.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -41,6 +43,7 @@ public class Producto {
 	 * La lista de detalles estará mapeada por el campo producto dentro de la clase DetalleFactura.
 	 */
 	@OneToMany(mappedBy = "producto", fetch = FetchType.EAGER)
+	@JsonIgnoreProperties({"producto"}) // Evitar reursividad inversa
 	private List<DetalleFactura> detalles = new ArrayList<>();
 
 	/*

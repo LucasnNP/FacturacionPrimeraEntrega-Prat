@@ -1,7 +1,7 @@
 package com.coderhouse.models;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /*
  * Representa el detalle de una factura, relacionando producto y cantidad. Además es el punto de unión entre facturas y productos.
@@ -29,7 +29,7 @@ public class DetalleFactura {
 	 */
 	@ManyToOne
 	@JoinColumn(name = "factura_id")
-	@JsonIgnore
+	@JsonIgnoreProperties({"detalles", "cliente"}) // Para ignorar las relaciones internas
 	private Factura factura;
 	
 	/*
@@ -37,7 +37,7 @@ public class DetalleFactura {
 	 */
 	@ManyToOne
 	@JoinColumn(name = "producto_id")
-	@JsonIgnore
+	@JsonIgnoreProperties({"detalles"})
 	private Producto producto;
 	
 	@Column(name = "Cantidad")

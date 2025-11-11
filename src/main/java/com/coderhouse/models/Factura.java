@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -42,8 +42,8 @@ public class Factura {
 	 * UnaFactura puede tener muchos detalles.
 	 * La lista de detalles estará mapeada por el campo factura dentro de la clase DetalleFactura.
 	 */
-	@OneToMany(mappedBy = "factura", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JsonIgnore
+	@OneToMany(mappedBy = "factura", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+	@JsonIgnoreProperties("factura")
 	private List<DetalleFactura> detalles = new ArrayList<>();
 	
 	private LocalDateTime fecha = LocalDateTime.now();

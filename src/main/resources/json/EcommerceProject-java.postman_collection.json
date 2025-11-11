@@ -1,0 +1,1371 @@
+{
+	"info": {
+		"_postman_id": "aebe4674-7997-4f7d-a2ec-d175f3777c27",
+		"name": "EcommerceProject-java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45852683",
+		"_collection_link": "https://www.postman.com/spaceflight-engineer-91089826/workspace/testin-qa/collection/45852683-aebe4674-7997-4f7d-a2ec-d175f3777c27?action=share&source=collection_link&creator=45852683"
+	},
+	"item": [
+		{
+			"name": "Get All Clientes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/Clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"Clientes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Clientes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/Clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"Clientes"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Nov 2025 18:30:16 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"nombre\": \"Lucas\",\n        \"apellido\": \"Prat\",\n        \"dni\": 40555111,\n        \"email\": \"lucas@email.com\",\n        \"createdAt\": null\n    },\n    {\n        \"id\": 2,\n        \"nombre\": \"Ana\",\n        \"apellido\": \"Torres\",\n        \"dni\": 42888999,\n        \"email\": \"ana@email.com\",\n        \"createdAt\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Cliente by id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/Clientes/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"Clientes",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Cliente by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/Clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"Clientes",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Nov 2025 12:52:35 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"nombre\": \"Lucas\",\n    \"apellido\": \"Prat\",\n    \"dni\": 40555111,\n    \"email\": \"lucas@email.com\",\n    \"createdAt\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Post Create Cliente",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Cliente Creado\",\r\n        \"apellido\": \"Postman\",\r\n        \"dni\": 40656333,\r\n        \"email\": \"clientecreado@email.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/Clientes/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"Clientes",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Post Create Cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Cliente Creado\",\r\n    \"apellido\": \"Postman\",\r\n    \"dni\": 40656333,\r\n    \"email\": \"clientecreado@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/Clientes/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"Clientes",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Nov 2025 14:08:44 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"nombre\": \"Cliente Creado\",\n    \"apellido\": \"Postman\",\n    \"dni\": 40656333,\n    \"email\": \"clientecreado@email.com\",\n    \"createdAt\": \"2025-11-11T11:08:44.4142026\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Put Update Cliente",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Cliente Actualizado\",\r\n        \"apellido\": \"Postman\",\r\n        \"dni\": 40656333,\r\n        \"email\": \"clientecreado@email.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/Clientes/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"Clientes",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Post Create Cliente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Cliente Creado\",\r\n    \"apellido\": \"Postman\",\r\n    \"dni\": 40656333,\r\n    \"email\": \"clientecreado@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/Clientes/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"Clientes",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Nov 2025 14:08:44 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "{\n    \"id\": 3,\n    \"nombre\": \"Cliente Creado\",\n    \"apellido\": \"Postman\",\n    \"dni\": 40656333,\n    \"email\": \"clientecreado@email.com\",\n    \"createdAt\": \"2025-11-11T11:08:44.4142026\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Cliente",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"nombre\": \"Cliente Actualizado\",\r\n        \"apellido\": \"Postman\",\r\n        \"dni\": 40656333,\r\n        \"email\": \"clientecreado@email.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/Clientes/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"Clientes",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Cliente",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nombre\": \"Cliente Actualizado\",\r\n        \"apellido\": \"Postman\",\r\n        \"dni\": 40656333,\r\n        \"email\": \"clientecreado@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/Clientes/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"Clientes",
+								"3"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 11 Nov 2025 14:21:30 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get All Productos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Productos",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/productos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Nov 2025 19:26:02 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"descripcion\": \"Yerba Mate\",\n        \"codigo\": \"YRB001\",\n        \"stock\": 100,\n        \"precio\": 1500,\n        \"detalles\": [\n            {\n                \"id\": 1,\n                \"factura\": {\n                    \"id\": 1,\n                    \"fecha\": \"2025-11-11T13:25:54\",\n                    \"total\": 3000\n                },\n                \"cantidad\": 2,\n                \"precioUnitario\": 1500\n            }\n        ]\n    },\n    {\n        \"id\": 2,\n        \"descripcion\": \"Azúcar\",\n        \"codigo\": \"AZC002\",\n        \"stock\": 50,\n        \"precio\": 1200,\n        \"detalles\": []\n    },\n    {\n        \"id\": 3,\n        \"descripcion\": \"Café\",\n        \"codigo\": \"CAF003\",\n        \"stock\": 75,\n        \"precio\": 2000,\n        \"detalles\": [\n            {\n                \"id\": 2,\n                \"factura\": {\n                    \"id\": 2,\n                    \"fecha\": \"2025-11-11T13:25:54\",\n                    \"total\": 2000\n                },\n                \"cantidad\": 1,\n                \"precioUnitario\": 2000\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Producto by id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/productos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Producto by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/productos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Nov 2025 14:25:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"descripcion\": \"Azúcar\",\n    \"codigo\": \"AZC002\",\n    \"stock\": 50,\n    \"precio\": 1200,\n    \"detalles\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Post Create Producto",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"descripcion\": \"Harina Integral 000 1kg\",\r\n  \"codigo\": \"HAR006\",\r\n  \"stock\": 120,\r\n  \"precio\": 950\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/productos/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Post Create Producto",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"descripcion\": \"Harina Integral 000 1kg\",\r\n  \"codigo\": \"HAR006\",\r\n  \"stock\": 120,\r\n  \"precio\": 950\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Nov 2025 14:28:41 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"descripcion\": \"Harina Integral 000 1kg\",\n    \"codigo\": \"HAR006\",\n    \"stock\": 120,\n    \"precio\": 950,\n    \"detalles\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Put Update Producto",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"descripcion\": \"Harina Integral 000 1kg Amanda\",\r\n  \"codigo\": \"HAR006\",\r\n  \"stock\": 120,\r\n  \"precio\": 1100.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/productos/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Put Update Producto",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"descripcion\": \"Harina Integral 000 1kg Amanda\",\r\n  \"codigo\": \"HAR006\",\r\n  \"stock\": 120,\r\n  \"precio\": 1100.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Nov 2025 14:34:22 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"descripcion\": \"Harina Integral 000 1kg Amanda\",\n    \"codigo\": \"HAR006\",\n    \"stock\": 120,\n    \"precio\": 1100,\n    \"detalles\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Producto",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"descripcion\": \"Harina Integral 000 1kg Amanda\",\r\n  \"codigo\": \"HAR006\",\r\n  \"stock\": 120,\r\n  \"precio\": 1100.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/productos/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"productos",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Producto",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"descripcion\": \"Harina Integral 000 1kg Amanda\",\r\n  \"codigo\": \"HAR006\",\r\n  \"stock\": 120,\r\n  \"precio\": 1100.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/productos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"productos",
+								"4"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 11 Nov 2025 14:35:43 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get All Facturas",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/facturas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"facturas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Facturas",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/facturas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"facturas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Nov 2025 20:57:42 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"cliente\": {\n            \"id\": 1,\n            \"nombre\": \"Lucas\",\n            \"apellido\": \"Prat\",\n            \"dni\": 40555111,\n            \"email\": \"lucas@email.com\",\n            \"createdAt\": null\n        },\n        \"detalles\": [\n            {\n                \"id\": 1,\n                \"producto\": {\n                    \"id\": 1,\n                    \"descripcion\": \"Yerba Mate\",\n                    \"codigo\": \"YRB001\",\n                    \"stock\": 100,\n                    \"precio\": 1500\n                },\n                \"cantidad\": 2,\n                \"precioUnitario\": 1500\n            }\n        ],\n        \"fecha\": \"2025-11-11T14:56:20\",\n        \"total\": 3000\n    },\n    {\n        \"id\": 2,\n        \"cliente\": {\n            \"id\": 2,\n            \"nombre\": \"Ana\",\n            \"apellido\": \"Torres\",\n            \"dni\": 42888999,\n            \"email\": \"ana@email.com\",\n            \"createdAt\": null\n        },\n        \"detalles\": [\n            {\n                \"id\": 2,\n                \"producto\": {\n                    \"id\": 3,\n                    \"descripcion\": \"Café\",\n                    \"codigo\": \"CAF003\",\n                    \"stock\": 75,\n                    \"precio\": 2000\n                },\n                \"cantidad\": 1,\n                \"precioUnitario\": 2000\n            }\n        ],\n        \"fecha\": \"2025-11-11T14:56:20\",\n        \"total\": 2000\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Factura by id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/facturas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"facturas",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Factura by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/facturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"facturas",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Nov 2025 20:58:49 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"cliente\": {\n        \"id\": 1,\n        \"nombre\": \"Lucas\",\n        \"apellido\": \"Prat\",\n        \"dni\": 40555111,\n        \"email\": \"lucas@email.com\",\n        \"createdAt\": null\n    },\n    \"detalles\": [\n        {\n            \"id\": 1,\n            \"producto\": {\n                \"id\": 1,\n                \"descripcion\": \"Yerba Mate\",\n                \"codigo\": \"YRB001\",\n                \"stock\": 100,\n                \"precio\": 1500\n            },\n            \"cantidad\": 2,\n            \"precioUnitario\": 1500\n        }\n    ],\n    \"fecha\": \"2025-11-11T14:56:20\",\n    \"total\": 3000\n}"
+				}
+			]
+		},
+		{
+			"name": "Post Create Factura",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cliente\": { \"id\": 1 },\r\n  \"detalles\": [\r\n    {\r\n      \"producto\": { \"id\": 1 },\r\n      \"cantidad\": 2\r\n    },\r\n    {\r\n      \"producto\": { \"id\": 3 },\r\n      \"cantidad\": 1\r\n    }\r\n  ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/facturas/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"facturas",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Post Create Factura",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cliente\": { \"id\": 1 },\r\n  \"detalles\": [\r\n    {\r\n      \"producto\": { \"id\": 1 },\r\n      \"cantidad\": 2\r\n    },\r\n    {\r\n      \"producto\": { \"id\": 3 },\r\n      \"cantidad\": 1\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/facturas/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"facturas",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Nov 2025 20:23:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"cliente\": {\n        \"id\": 1,\n        \"nombre\": \"Lucas\",\n        \"apellido\": \"Prat\",\n        \"dni\": 40555111,\n        \"email\": \"lucas@email.com\",\n        \"createdAt\": null\n    },\n    \"detalles\": [\n        {\n            \"id\": 3,\n            \"producto\": {\n                \"id\": 1,\n                \"descripcion\": \"Yerba Mate\",\n                \"codigo\": \"YRB001\",\n                \"stock\": 98,\n                \"precio\": 1500\n            },\n            \"cantidad\": 2,\n            \"precioUnitario\": 1500\n        },\n        {\n            \"id\": 4,\n            \"producto\": {\n                \"id\": 3,\n                \"descripcion\": \"Café\",\n                \"codigo\": \"CAF003\",\n                \"stock\": 74,\n                \"precio\": 2000\n            },\n            \"cantidad\": 1,\n            \"precioUnitario\": 2000\n        }\n    ],\n    \"fecha\": \"2025-11-11T17:23:50.0121241\",\n    \"total\": 5000\n}"
+				}
+			]
+		},
+		{
+			"name": "Put Update Factura",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"cliente\": { \"id\": 1 },\r\n  \"detalles\": [\r\n    {\r\n      \"producto\": { \"id\": 1 },\r\n      \"cantidad\": 3\r\n    },\r\n    {\r\n      \"producto\": { \"id\": 2 },\r\n      \"cantidad\": 1\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/facturas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"facturas",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Put Update Factura",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cliente\": { \"id\": 1 },\r\n  \"detalles\": [\r\n    {\r\n      \"producto\": { \"id\": 1 },\r\n      \"cantidad\": 3\r\n    },\r\n    {\r\n      \"producto\": { \"id\": 2 },\r\n      \"cantidad\": 1\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/facturas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"facturas",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Nov 2025 20:47:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"cliente\": {\n        \"id\": 1,\n        \"nombre\": \"Lucas\",\n        \"apellido\": \"Prat\",\n        \"dni\": 40555111,\n        \"email\": \"lucas@email.com\",\n        \"createdAt\": null\n    },\n    \"detalles\": [\n        {\n            \"id\": 1,\n            \"producto\": {\n                \"id\": 1,\n                \"descripcion\": \"Yerba Mate\",\n                \"codigo\": \"YRB001\",\n                \"stock\": 93,\n                \"precio\": 1500\n            },\n            \"cantidad\": 2,\n            \"precioUnitario\": 1500\n        }\n    ],\n    \"fecha\": \"2025-11-11T14:45:51\",\n    \"total\": 3000\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Factura",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fecha\": \"2025-11-11T18:30:00\",\r\n  \"total\": 4200\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/facturas/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"facturas",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Factura",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fecha\": \"2025-11-11T18:30:00\",\r\n  \"total\": 4200\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/facturas/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"facturas",
+								"3"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 11 Nov 2025 15:06:49 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "Get All Detalles",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/detalles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"detalles"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get All Detalles",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/detalles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"detalles"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Nov 2025 21:00:45 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"factura\": {\n            \"id\": 1,\n            \"fecha\": \"2025-11-11T14:56:20\",\n            \"total\": 3000\n        },\n        \"producto\": {\n            \"id\": 1,\n            \"descripcion\": \"Yerba Mate\",\n            \"codigo\": \"YRB001\",\n            \"stock\": 95,\n            \"precio\": 1500\n        },\n        \"cantidad\": 2,\n        \"precioUnitario\": 1500\n    },\n    {\n        \"id\": 2,\n        \"factura\": {\n            \"id\": 2,\n            \"fecha\": \"2025-11-11T14:56:20\",\n            \"total\": 2000\n        },\n        \"producto\": {\n            \"id\": 3,\n            \"descripcion\": \"Café\",\n            \"codigo\": \"CAF003\",\n            \"stock\": 74,\n            \"precio\": 2000\n        },\n        \"cantidad\": 1,\n        \"precioUnitario\": 2000\n    },\n    {\n        \"id\": 3,\n        \"factura\": {\n            \"id\": 3,\n            \"fecha\": \"2025-11-11T17:59:24.789755\",\n            \"total\": 5000\n        },\n        \"producto\": {\n            \"id\": 1,\n            \"descripcion\": \"Yerba Mate\",\n            \"codigo\": \"YRB001\",\n            \"stock\": 95,\n            \"precio\": 1500\n        },\n        \"cantidad\": 2,\n        \"precioUnitario\": 1500\n    },\n    {\n        \"id\": 4,\n        \"factura\": {\n            \"id\": 3,\n            \"fecha\": \"2025-11-11T17:59:24.789755\",\n            \"total\": 5000\n        },\n        \"producto\": {\n            \"id\": 3,\n            \"descripcion\": \"Café\",\n            \"codigo\": \"CAF003\",\n            \"stock\": 74,\n            \"precio\": 2000\n        },\n        \"cantidad\": 1,\n        \"precioUnitario\": 2000\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Detalle by id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/detalles/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"detalles",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Detalle by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/detalles/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"detalles",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 11 Nov 2025 20:48:30 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"factura\": {\n        \"id\": 1,\n        \"fecha\": \"2025-11-11T14:45:51\",\n        \"total\": 3000\n    },\n    \"producto\": {\n        \"id\": 1,\n        \"descripcion\": \"Yerba Mate\",\n        \"codigo\": \"YRB001\",\n        \"stock\": 93,\n        \"precio\": 1500\n    },\n    \"cantidad\": 2,\n    \"precioUnitario\": 1500\n}"
+				}
+			]
+		}
+	]
+}

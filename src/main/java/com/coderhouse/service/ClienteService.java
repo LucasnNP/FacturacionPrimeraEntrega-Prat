@@ -43,7 +43,7 @@ public class ClienteService implements CRUDInterface<Cliente, Long> {
 	public Cliente update(Long id, Cliente clienteActualizado){
 		Cliente cliente = findById(id);
 		
-		if (clienteActualizado.getNombre() != null && clienteActualizado.getNombre().isEmpty()) {
+		if (clienteActualizado.getNombre() != null && !clienteActualizado.getNombre().isEmpty()) {
 			cliente.setNombre(clienteActualizado.getNombre());
 		}
 		

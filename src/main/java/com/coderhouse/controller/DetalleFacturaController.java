@@ -54,14 +54,19 @@ public class DetalleFacturaController {
 	@PostMapping("/create")
 	public ResponseEntity<DetalleFactura> createDetalle(@RequestBody DetalleFactura detalle) {
 		try {
+			if (detalle.getProducto() == null || detalle.getFactura() == null) {
+                return ResponseEntity.badRequest().build(); // 400 Bad Request
+            }
 			DetalleFactura nuevo = detalleService.save(detalle);
 			return ResponseEntity.status(HttpStatus.CREATED).body(nuevo); // 201
+		} catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().build(); // Error de validación
 		} catch (Exception e) {
 			return ResponseEntity.internalServerError().build(); //Error 500
 		}
 	}
 	
-	@PutMapping("/{detalleID}")
+	@PutMapping("/{detalleId}")
 	public ResponseEntity<DetalleFactura> updateDetalle(@PathVariable Long detalleId, @RequestBody DetalleFactura actualizado) {
 		try {
 			DetalleFactura detalle = detalleService.update(detalleId, actualizado);
