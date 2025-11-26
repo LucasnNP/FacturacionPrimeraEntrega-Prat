@@ -6,8 +6,14 @@
 El objetivo es construir un sistema que permita **administrar las ventas de un comercio**, aplicando los conceptos aprendidos durante el curso:  
 control de flujos, objetos y métodos, herencia, excepciones, clases abstractas, uso de bases de datos, y persistencia con JPA.
 
-La aplicación está pensada para:  
-manejar **clientes**, **productos**, **facturas** y **detalles de factura**, modelando sus relaciones con precisión a nivel de base de datos y en el código Java.
+El objetivo del sistema es administrar el ciclo completo de venta de un comercio, incorporando:
+
+- Manejo de clientes
+- Gestión de productos
+- Generación de facturas
+- Creación de detalles de factura
+- Reglas comerciales reales (validación de stock, cliente, precios históricos)
+- Uso de una API externa para obtener la fecha de emisión de la factura
 
 ---
 
@@ -74,6 +80,93 @@ De esta manera, se crea la relación **muchos a muchos** entre Factura y Product
 
 ---
 
+## 📏 Reglas de negocio implementadas
+
+El proyecto incluye validaciones reales para simular un sistema profesional.
+
+### ✔ Validaciones de factura
+- El cliente debe existir.
+- Debe tener al menos una línea.
+- Cada línea debe incluir:
+  - Un producto válido
+  - Cantidad mayor a 0
+  - Stock suficiente
+
+### ✔ Reglas sobre facturas
+- No se pueden modificar una vez creadas.
+- No se pueden eliminar (motivos fiscales).
+- Los detalles se generan automáticamente.
+
+### ✔ Reglas sobre productos
+- Si se crea una factura:
+  - El stock del producto se descuenta.
+  - El precio del producto se congela en el detalle.
+
+### ✔ Integración con API externa
+Para obtener la fecha de emisión, se consulta:
+👉 http://worldclockapi.com/api/json/utc/now
+Si falla, se usa LocalDateTime.now() como fallback.
+
+---
+
+## 🌐 Documentación Swagger
+El proyecto incluye documentación automática usando SpringDoc + OpenAPI.
+Disponible en:
+
+```bash
+http://localhost:8080/swagger-ui/index.html
+```
+Incluye:
+- Endpoints de clientes, productos y facturas.
+- Ejemplos JSON.
+- Errores personalizados (ErrorResponse).
+- Respuestas detalladas y modelos.
+
+---
+
+## 📦 Ejemplo de request para crear factura
+```json
+{
+  "cliente": { "clienteid": 1 },
+  "lineas": [
+    {
+      "producto": { "productoid": 1 },
+      "cantidad": 2
+    },
+    {
+      "producto": { "productoid": 3 },
+      "cantidad": 1
+    }
+  ]
+}
+```
+
+---
+
+## 📄 Ejemplo de respuesta correcta
+```json
+{
+  "id": 5,
+  "cliente": {
+    "id": 1,
+    "nombre": "Lucas",
+    "apellido": "Prat",
+    "dni": 40555111
+  },
+  "fecha": "2025-01-20T15:34:10",
+  "total": 5000.0,
+  "detalles": [
+    {
+      "id": 12,
+      "cantidad": 2,
+      "precioUnitario": 1500,
+      "producto": { "id": 1, "nombre": "Monitor" }
+    }
+  ]
+}
+```
+---
+
 ## 🚀 Ejecución
 1. Cloná o descargá el repositorio.
 2. Abrí el proyecto enEclipse como Maven Project.
@@ -88,18 +181,21 @@ De esta manera, se crea la relación **muchos a muchos** entre Factura y Product
 - JPA / Hibernate
 - MySQL
 - Maven
+- Swagger / OpenAPI
+- Lombok
 
 ---
 
 ## 🧠 Conceptos aplicados
-- Control de flujos y estructuras iterativas.
-- Programación orientada a objetos.
-- Clases e instancias, atributos y métodos.
-- Relaciones entre clases.
-- Manejo de excepciones.
-- Persistencia con JPA u Hibernate.
-- Configuración de base de datos.
-- Integración de DAO y modelo de negocio.
+- POO (clases, objetos, encapsulamiento)
+- Relaciones entre entidades
+- Herencia e interfaces (CRUDInterface)
+- Manejo de excepciones
+- Persistencia con JPA + Hibernate
+- Servicios, controladores y repositorios
+- Validaciones de negocio
+- Consumo de API externa (WorldClockAPI)
+- Documentación con OpenAPI
 
 ---
 
