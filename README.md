@@ -104,7 +104,7 @@ El proyecto incluye validaciones reales para simular un sistema profesional.
 
 ### ✔ Integración con API externa
 Para obtener la fecha de emisión, se consulta:
-👉 http://worldclockapi.com/api/json/utc/now
+- 👉 http://worldclockapi.com/api/json/utc/now
 Si falla, se usa LocalDateTime.now() como fallback.
 
 ---
