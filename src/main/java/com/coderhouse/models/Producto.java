@@ -17,7 +17,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Entity
 @Table(name = "productos")
 public class Producto {
@@ -45,85 +55,6 @@ public class Producto {
 	@OneToMany(mappedBy = "producto", fetch = FetchType.EAGER)
 	@JsonIgnoreProperties({"producto"}) // Evitar reursividad inversa
 	private List<DetalleFactura> detalles = new ArrayList<>();
-
-	/*
-	 * se genera el constructor de la superclaseclase.
-	 */
-	public Producto() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/*
-	 * se genera el constructor usando los campos de interés.
-	 */
-	public Producto(String descripcion, String codigo, int stock, double precio) {
-		super();
-		this.descripcion = descripcion;
-		this.codigo = codigo;
-		this.stock = stock;
-		this.precio = precio;
-	}
-	
-	/*
-	 * Se generan los Getters y Setters.
-	 */
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getDescripcion() {
-		return descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
-	}
-
-	public String getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
-	}
-
-	public int getStock() {
-		return stock;
-	}
-
-	public void setStock(int stock) {
-		this.stock = stock;
-	}
-
-	public double getPrecio() {
-		return precio;
-	}
-
-	public void setPrecio(double precio) {
-		this.precio = precio;
-	}
-
-	public List<DetalleFactura> getDetalles() {
-		return detalles;
-	}
-
-	public void setDetalles(List<DetalleFactura> detalles) {
-		this.detalles = detalles;
-	}
-
-	/*
-	 * Se genera el toString.
-	 */
-	@Override
-	public String toString() {
-		return "Producto [id=" + id + ", descripcion=" + descripcion + ", codigo=" + codigo + ", stock=" + stock
-				+ ", precio=" + precio + "]";
-	}
 
 	
 }

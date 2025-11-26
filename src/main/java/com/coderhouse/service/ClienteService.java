@@ -34,7 +34,12 @@ public class ClienteService implements CRUDInterface<Cliente, Long> {
 	}
 	
 	@Override
+	@Transactional
 	public Cliente save(Cliente nuevoCliente) {
+		
+		if (nuevoCliente.getDni() != 0 && clienteRepository.existsByDni(nuevoCliente.getDni())) {
+			throw new IllegalStateException("El DNI ya existe");
+		}
 		return clienteRepository.save(nuevoCliente);
 	}
 	

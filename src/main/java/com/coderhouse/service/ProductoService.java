@@ -34,7 +34,13 @@ public class ProductoService implements CRUDInterface<Producto, Long> {
 	}
 	
 	@Override
+	@Transactional
 	public Producto save(Producto nuevoProducto) {
+		
+		if (nuevoProducto.getCodigo() != null && productoRepository.existsByCodigo(nuevoProducto.getCodigo())) {
+			throw new IllegalStateException("Ya existe un producto con ese código");
+		}
+		
 		return productoRepository.save(nuevoProducto);
 	}
 	
@@ -51,11 +57,11 @@ public class ProductoService implements CRUDInterface<Producto, Long> {
 			producto.setCodigo(productoActualizado.getCodigo());
 		}
 		
-		if (productoActualizado.getPrecio() != 0) {
+		if (productoActualizado.getPrecio() > 0) {
 			producto.setPrecio(productoActualizado.getPrecio());
 		}
 		
-		if (productoActualizado.getStock() != 0) {
+		if (productoActualizado.getStock() > 0) {
 			productoActualizado.setStock(productoActualizado.getStock());
 		}
 		

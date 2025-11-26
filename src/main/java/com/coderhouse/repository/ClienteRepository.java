@@ -8,5 +8,7 @@ import com.coderhouse.models.Cliente;
  * Interfaz que se comunica directamente con la db
  */
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+	
+	boolean existsByDni(int dni);
 
 }

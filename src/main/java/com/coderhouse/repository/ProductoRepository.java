@@ -8,5 +8,7 @@ import com.coderhouse.models.Producto;
  * Interfaz que se comunica directamente con la db
  */
 public interface ProductoRepository extends JpaRepository<Producto, Long> {
+	
+	boolean existsByCodigo (String codigo);
 
 }

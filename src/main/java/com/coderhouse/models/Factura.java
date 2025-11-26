@@ -21,7 +21,17 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Entity
 @Table(name = "Facturas")
 public class Factura {
@@ -50,75 +60,6 @@ public class Factura {
 	
 	@Column(name= "Total", nullable = false)
 	private double total;
-
-	/*
-	 * se declara el constructor de la superclaseclase.
-	 */
-	public Factura() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/*
-	 * se genera el constructor usando los campos de interés.
-	 */
-	public Factura(Cliente cliente, double total) {
-		super();
-		this.cliente = cliente;
-		this.total = total;
-	}
-
-	/*
-	 * Se generan los Getters y Setters.
-	 */
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Cliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	public List<DetalleFactura> getDetalles() {
-		return detalles;
-	}
-
-	public void setDetalles(List<DetalleFactura> detalles) {
-		this.detalles = detalles;
-	}
-
-	public LocalDateTime getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(LocalDateTime fecha) {
-		this.fecha = fecha;
-	}
-
-	public double getTotal() {
-		return total;
-	}
-
-	public void setTotal(double total) {
-		this.total = total;
-	}
-
-	/*
-	 * Se genera el toString.
-	 */
-	@Override
-	public String toString() {
-		return "Factura [id=" + id + ", cliente=" + cliente.getNombre() + ", total=" + total + ", fecha=" + fecha + "]";
-	}
-	
 	
 
 }

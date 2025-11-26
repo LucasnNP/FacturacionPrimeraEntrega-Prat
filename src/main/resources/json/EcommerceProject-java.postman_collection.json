@@ -459,7 +459,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": "",
+					"_postman_previewlanguage": null,
 					"header": [
 						{
 							"key": "Content-Type",
@@ -863,7 +863,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": "",
+					"_postman_previewlanguage": null,
 					"header": [
 						{
 							"key": "Content-Type",
@@ -935,7 +935,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": "",
+					"_postman_previewlanguage": null,
 					"header": [
 						{
 							"key": "Content-Type",
@@ -1025,7 +1025,7 @@
 					},
 					"status": "Created",
 					"code": 201,
-					"_postman_previewlanguage": "",
+					"_postman_previewlanguage": null,
 					"header": [
 						{
 							"key": "Content-Type",
@@ -1050,6 +1050,62 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"id\": 3,\n    \"cliente\": {\n        \"id\": 1,\n        \"nombre\": \"Lucas\",\n        \"apellido\": \"Prat\",\n        \"dni\": 40555111,\n        \"email\": \"lucas@email.com\",\n        \"createdAt\": null\n    },\n    \"detalles\": [\n        {\n            \"id\": 3,\n            \"producto\": {\n                \"id\": 1,\n                \"descripcion\": \"Yerba Mate\",\n                \"codigo\": \"YRB001\",\n                \"stock\": 98,\n                \"precio\": 1500\n            },\n            \"cantidad\": 2,\n            \"precioUnitario\": 1500\n        },\n        {\n            \"id\": 4,\n            \"producto\": {\n                \"id\": 3,\n                \"descripcion\": \"Café\",\n                \"codigo\": \"CAF003\",\n                \"stock\": 74,\n                \"precio\": 2000\n            },\n            \"cantidad\": 1,\n            \"precioUnitario\": 2000\n        }\n    ],\n    \"fecha\": \"2025-11-11T17:23:50.0121241\",\n    \"total\": 5000\n}"
+				},
+				{
+					"name": "Post Create Factura",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cliente\": { \"clienteid\": 1 },\r\n  \"lineas\": [\r\n    {\r\n      \"producto\": { \"productoid\": 1 },\r\n      \"cantidad\": 2\r\n    },\r\n    {\r\n      \"producto\": { \"productoid\": 3 },\r\n      \"cantidad\": 1\r\n    }\r\n  ]\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/facturas/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"facturas",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Nov 2025 17:12:39 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"cliente\": {\n        \"id\": 1,\n        \"nombre\": \"Lucas\",\n        \"apellido\": \"Prat\",\n        \"dni\": 40555111,\n        \"email\": \"lucas@email.com\",\n        \"createdAt\": null\n    },\n    \"detalles\": [\n        {\n            \"id\": 3,\n            \"producto\": {\n                \"id\": 1,\n                \"descripcion\": \"Yerba Mate\",\n                \"codigo\": \"YRB001\",\n                \"stock\": 98,\n                \"precio\": 1500\n            },\n            \"cantidad\": 2,\n            \"precioUnitario\": 1500\n        },\n        {\n            \"id\": 4,\n            \"producto\": {\n                \"id\": 3,\n                \"descripcion\": \"Café\",\n                \"codigo\": \"CAF003\",\n                \"stock\": 74,\n                \"precio\": 2000\n            },\n            \"cantidad\": 1,\n            \"precioUnitario\": 2000\n        }\n    ],\n    \"fecha\": \"2025-11-26T14:12:39\",\n    \"total\": 5000\n}"
 				}
 			]
 		},
@@ -1115,7 +1171,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": "",
+					"_postman_previewlanguage": null,
 					"header": [
 						{
 							"key": "Content-Type",
@@ -1267,7 +1323,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": "",
+					"_postman_previewlanguage": null,
 					"header": [
 						{
 							"key": "Content-Type",
@@ -1339,7 +1395,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": "",
+					"_postman_previewlanguage": null,
 					"header": [
 						{
 							"key": "Content-Type",

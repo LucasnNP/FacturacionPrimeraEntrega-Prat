@@ -19,7 +19,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Entity
 @Table(name = "Clientes")
 public class Cliente {
@@ -50,94 +60,4 @@ public class Cliente {
 	
 	private LocalDateTime createdAt = LocalDateTime.now();
 
-	/*
-	 * se declara el constructor de la superclaseclase.
-	 */
-	public Cliente() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/*
-	 * se genera el constructor usando los campos de interés.
-	 */
-	public Cliente(String nombre, String apellido, int dni, String email) {
-		super();
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.dni = dni;
-		this.email = email;
-	}
-
-	/*
-	 * Se generan los Getters y Setters.
-	 */
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getApellido() {
-		return apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-
-	public int getDni() {
-		return dni;
-	}
-
-	public void setDni(int dni) {
-		this.dni = dni;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public List<Factura> getFacturas() {
-		return facturas;
-	}
-
-	public void setFacturas(List<Factura> facturas) {
-		this.facturas = facturas;
-	}
-
-	public LocalDateTime getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(LocalDateTime createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	/*
-	 * Se genera el toString.
-	 */
-	@Override
-	public String toString() {
-		return "Cliente [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", dni=" + dni + ", email="
-				+ email + "]";
-	}
-
-	
-	
-	
 }

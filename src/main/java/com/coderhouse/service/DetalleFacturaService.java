@@ -35,16 +35,16 @@ public class DetalleFacturaService implements CRUDInterface<DetalleFactura, Long
 	//No se permiten operaciones de escritura directos en los detalles
 	@Override
 	public DetalleFactura save(DetalleFactura entity) {
-			throw new UnsupportedOperationException("Los detalles solo se crean mediante la factura.");
+			throw new UnsupportedOperationException("Los detalles no se crean por separado. Usar FacturaService.crearFacturaConDetalles().");
 		}
 		
 	@Override
 	public DetalleFactura update(Long id, DetalleFactura entity) {
-		throw new UnsupportedOperationException("Los detalles solo se actualizan mediante la factura.");
+		throw new UnsupportedOperationException("No se puede actualizar un detalle de factura.");
 	}
 	
 	@Override
 	public void deleteById(Long id) {
-		throw new UnsupportedOperationException("Los detalles solo se eliminan mediante la factura.");
+		throw new UnsupportedOperationException("No se puede eliminar un detalle de factura de forma independiente.");
 	}
 }
